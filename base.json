@@ -13,6 +13,8 @@
   "schedule": ["before 6am on wednesday", "before 6am on saturday"],
   "minimumReleaseAge": "7 days",
   "prHourlyLimit": 5,
+  "osvVulnerabilityAlerts": true,
+  "dependencyDashboardOSVVulnerabilitySummary": "unresolved",
   "vulnerabilityAlerts": {
     "schedule": ["at any time"],
     "labels": ["security"]
