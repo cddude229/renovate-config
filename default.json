@@ -1,0 +1,8 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "description": "Standard setup: the shared base plus automerge for minor and patch updates",
+  "extends": [
+    "github>cddude229/renovate-config:base",
+    "github>cddude229/renovate-config:automerge-non-major"
+  ]
+}
