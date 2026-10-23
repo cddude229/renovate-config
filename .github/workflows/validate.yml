@@ -1,0 +1,19 @@
+name: Validate
+
+on:
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+      # Unpinned on purpose: the hosted Renovate app always runs a recent release, so validate against the latest.
+      - run: npx --yes --package renovate -- renovate-config-validator --strict --no-global *.json

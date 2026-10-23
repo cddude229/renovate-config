@@ -1,0 +1,16 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "description": "Automerge minor and patch updates, except minor bumps of 0.x versions",
+  "packageRules": [
+    {
+      "matchUpdateTypes": ["minor", "patch"],
+      "automerge": true
+    },
+    {
+      "description": "Minor bumps of 0.x versions are breaking under semver; never automerge them",
+      "matchCurrentVersion": "/^[~^]?0\\./",
+      "matchUpdateTypes": ["minor"],
+      "automerge": false
+    }
+  ]
+}
