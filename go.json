@@ -1,5 +1,6 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "description": "Post-update cleanup for go.mod: gomodTidy",
-  "postUpdateOptions": ["gomodTidy"]
+  "description": "Go modules: gomodTidy and import path rewrites after updates, and indirect dependency updates only for security fixes",
+  "extends": ["security:gomodIndirectSecurityUpdates"],
+  "postUpdateOptions": ["gomodTidy", "gomodUpdateImportPaths"]
 }
