@@ -1,9 +1,9 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "description": "Automerge minor and patch updates, except minor bumps of 0.x versions",
+  "description": "Automerge minor, patch and digest updates, except minor bumps of 0.x versions",
   "packageRules": [
     {
-      "matchUpdateTypes": ["minor", "patch"],
+      "matchUpdateTypes": ["minor", "patch", "digest", "pinDigest"],
       "automerge": true
     },
     {
