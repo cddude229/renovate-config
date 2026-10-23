@@ -5,7 +5,8 @@
     "config:recommended",
     ":configMigration",
     "abandonments:recommended",
-    "helpers:pinGitHubActionDigests"
+    "helpers:pinGitHubActionDigestsToSemver",
+    "security:openssf-scorecard"
   ],
   "assignees": ["cddude229"],
   "reviewers": ["cddude229"],
@@ -13,8 +14,27 @@
   "schedule": ["before 6am on wednesday", "before 6am on saturday"],
   "minimumReleaseAge": "7 days",
   "prHourlyLimit": 5,
+  "osvVulnerabilityAlerts": true,
+  "dependencyDashboardOSVVulnerabilitySummary": "unresolved",
   "vulnerabilityAlerts": {
     "schedule": ["at any time"],
     "labels": ["security"]
-  }
+  },
+  "packageRules": [
+    {
+      "description": "security:openssf-scorecard replaces the PR table columns; put back the Age and Confidence badges from config:recommended",
+      "matchSourceUrls": ["https://github.com/**"],
+      "matchDatasources": [
+        "go",
+        "maven",
+        "npm",
+        "nuget",
+        "packagist",
+        "pypi",
+        "rubygems"
+      ],
+      "matchUpdateTypes": ["patch", "minor", "major"],
+      "prBodyColumns": ["Package", "Change", "Age", "Confidence", "OpenSSF"]
+    }
+  ]
 }
