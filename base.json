@@ -5,7 +5,7 @@
     "config:recommended",
     ":configMigration",
     "abandonments:recommended",
-    "helpers:pinGitHubActionDigests",
+    "helpers:pinGitHubActionDigestsToSemver",
     "security:openssf-scorecard"
   ],
   "assignees": ["cddude229"],
