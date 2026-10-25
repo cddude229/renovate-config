@@ -35,6 +35,12 @@
       ],
       "matchUpdateTypes": ["patch", "minor", "major"],
       "prBodyColumns": ["Package", "Change", "Age", "Confidence", "OpenSSF"]
+    },
+    {
+      "description": "Update every action and reusable workflow in one PR so CI checks them together; with: inputs, runners and service images stay separate",
+      "matchManagers": ["github-actions"],
+      "matchDepTypes": ["action", "workflow"],
+      "groupName": "GitHub Actions"
     }
   ]
 }
