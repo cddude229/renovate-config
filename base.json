@@ -1,6 +1,6 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "description": "Settings every repo shares, with dependency updates on Wednesday and Saturday mornings; extend default.json unless the repo needs its own automerge rules",
+  "description": "Settings every repo shares, with dependency updates between 5am and 7am Pacific on Wednesday and Saturday; extend default.json unless the repo needs its own automerge rules",
   "extends": [
     "config:recommended",
     ":configMigration",
@@ -11,7 +11,7 @@
   "assignees": ["cddude229"],
   "reviewers": ["cddude229"],
   "timezone": "America/Los_Angeles",
-  "schedule": ["before 6am on wednesday", "before 6am on saturday"],
+  "schedule": ["* 5-6 * * 3,6"],
   "minimumReleaseAge": "7 days",
   "prHourlyLimit": 5,
   "osvVulnerabilityAlerts": true,
