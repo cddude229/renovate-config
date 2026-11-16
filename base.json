@@ -15,7 +15,9 @@
   "minimumReleaseAge": "7 days",
   "prHourlyLimit": 5,
   "osvVulnerabilityAlerts": true,
-  "dependencyDashboardOSVVulnerabilitySummary": "unresolved",
+  "dependencyDashboard": {
+    "osvVulnerabilitySummary": "unresolved"
+  },
   "vulnerabilityAlerts": {
     "schedule": ["at any time"],
     "labels": ["security"]
