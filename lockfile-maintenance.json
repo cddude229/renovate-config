@@ -1,9 +1,9 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "description": "Weekly lock file maintenance on Sunday mornings, separate from the Wednesday/Saturday updates; always reviewed by hand",
+  "description": "Weekly lock file maintenance between 5am and 7am Pacific on Sunday, separate from the Wednesday/Saturday updates; always reviewed by hand",
   "lockFileMaintenance": {
     "enabled": true,
     "automerge": false,
-    "schedule": ["before 6am on sunday"]
+    "schedule": ["* 5-6 * * 0"]
   }
 }
