@@ -22,3 +22,9 @@ Changes here apply to every repo on its next Renovate run. Validate before mergi
 ```
 npx --yes --package renovate -- renovate-config-validator --strict --no-global *.json
 ```
+
+## Commit messages
+
+This repo uses [Conventional Commits](https://www.conventionalcommits.org/) from now on: start each
+commit message with a type such as `feat:`, `fix:`, `docs:` or `chore:`. Renovate's own commits
+already follow this via `semanticCommits` in `base.json`.
