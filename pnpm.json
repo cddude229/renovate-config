@@ -1,5 +1,12 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "description": "Post-update cleanup for pnpm: pnpmDedupe",
-  "postUpdateOptions": ["pnpmDedupe"]
+  "description": "pnpm repos: pnpmDedupe after updates, and pnpm and turbo updated together",
+  "postUpdateOptions": ["pnpmDedupe"],
+  "packageRules": [
+    {
+      "description": "Update pnpm and turbo in one PR, since turbo runs every pnpm task",
+      "matchPackageNames": ["pnpm", "turbo", "eslint-plugin-turbo"],
+      "groupName": "pnpm and turbo"
+    }
+  ]
 }
