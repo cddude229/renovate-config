@@ -1,0 +1,20 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "description": "Scala repos (Maven or sbt): Scala, its build tool and compiler plugin updated together",
+  "packageRules": [
+    {
+      "description": "Update Scala, the scala-lang modules, Maven or sbt and the Scala Maven plugin in one PR, since they often release in the same run",
+      "matchPackageNames": [
+        "scala",
+        "org.scala-lang:**",
+        "org.scala-lang.modules:**",
+        "maven",
+        "org.apache.maven:**",
+        "org.apache.maven.plugins:**",
+        "net.alchim31.maven:**",
+        "sbt/sbt"
+      ],
+      "groupName": "Scala build"
+    }
+  ]
+}

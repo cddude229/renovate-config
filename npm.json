@@ -1,5 +1,6 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "description": "Post-update cleanup for npm: npmDedupe",
+  "description": "npm repos: the js preset plus npmDedupe after updates",
+  "extends": ["github>cddude229/renovate-config:js"],
   "postUpdateOptions": ["npmDedupe"]
 }

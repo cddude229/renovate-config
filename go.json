@@ -1,6 +1,21 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "description": "Go modules: gomodTidy and import path rewrites after updates, and indirect dependency updates only for security fixes",
+  "description": "Go modules: gomodTidy and import path rewrites after updates, indirect dependency updates only for security fixes, and the Go toolchain and golangci-lint each updated in one PR",
   "extends": ["security:gomodIndirectSecurityUpdates"],
-  "postUpdateOptions": ["gomodTidy", "gomodUpdateImportPaths"]
+  "postUpdateOptions": ["gomodTidy", "gomodUpdateImportPaths"],
+  "packageRules": [
+    {
+      "description": "Update the golang Docker image and go.mod's go/toolchain directives together, so CI tests on the Go that ships",
+      "matchDepNames": ["golang", "go"],
+      "groupName": "Go toolchain"
+    },
+    {
+      "description": "Update the golangci-lint version and golangci-lint-action together, so CI and local linting change in one PR",
+      "matchPackageNames": [
+        "golangci/golangci-lint",
+        "golangci/golangci-lint-action"
+      ],
+      "groupName": "golangci-lint"
+    }
+  ]
 }
