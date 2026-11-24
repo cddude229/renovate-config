@@ -1,6 +1,7 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "description": "pnpm repos: pnpmDedupe after updates, and pnpm and turbo updated together",
+  "description": "pnpm repos: the js preset plus pnpmDedupe after updates, and pnpm and turbo updated together",
+  "extends": ["github>cddude229/renovate-config:js"],
   "postUpdateOptions": ["pnpmDedupe"],
   "packageRules": [
     {
