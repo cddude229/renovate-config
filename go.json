@@ -1,6 +1,13 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "description": "Go modules: gomodTidy and import path rewrites after updates, and indirect dependency updates only for security fixes",
+  "description": "Go modules: gomodTidy and import path rewrites after updates, indirect dependency updates only for security fixes, and the golang image and toolchain directive updated together",
   "extends": ["security:gomodIndirectSecurityUpdates"],
-  "postUpdateOptions": ["gomodTidy", "gomodUpdateImportPaths"]
+  "postUpdateOptions": ["gomodTidy", "gomodUpdateImportPaths"],
+  "packageRules": [
+    {
+      "description": "Update the golang Docker image and go.mod's go/toolchain directives together, so CI tests on the Go that ships",
+      "matchDepNames": ["golang", "go"],
+      "groupName": "Go toolchain"
+    }
+  ]
 }
